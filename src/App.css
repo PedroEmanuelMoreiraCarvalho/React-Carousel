@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+.background{
+  background-color: #dbdbdb;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.carousel_canvas{
+  width: fit-content;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.carousel{
+  display: flex;
+  gap: 10px;
+  background-color: #ececec;
+  padding: 10px 50px;
+  border-radius: 5px;
+  max-width: 600px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.carousel::-webkit-scrollbar{
+  display: none;
+}
+.programing_item{
+  min-width: 100px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px #999;
+  transition: all ease-out 0.2s;
+}
+.programing_item:hover{
+  transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
+.previous, .next{
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  top: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.previous{
+  left: 0;
+}
+.next{
+  right: 0;
 }
